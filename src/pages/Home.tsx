@@ -14,6 +14,7 @@ import { ProductCard } from '../components/ProductCard';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { BOOK_CATEGORIES } from '../constants/categories';
+import lawBannerImg from '../assets/images/Pioneer Book House Law Books Banner.png';
 
 export function Home() {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -117,7 +118,7 @@ export function Home() {
             </div>
           </motion.div>
 
-          {/* Right Side Hero Image Banner */}
+          {/* Right Side Hero Image Banner: Pioneer Book House Law Books Banner */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -126,12 +127,11 @@ export function Home() {
           >
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-slate-950/70 border border-sky-400/20 group bg-slate-950">
               <img
-                src="/src/assets/images/hero_law_banner_1791798870717.jpg"
-                alt="Pioneer Books - Law Book Seller & Supplier"
-                referrerPolicy="no-referrer"
+                src={lawBannerImg}
+                alt="Pioneer Book House Law Books Banner"
                 className="w-full h-[470px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/30 to-transparent flex flex-col justify-end p-8">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent flex flex-col justify-end p-8">
                 <div className="flex items-center space-x-2 mb-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-sky-400 animate-ping"></span>
                   <span className="text-xs uppercase tracking-widest text-sky-300 font-extrabold">
@@ -154,7 +154,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Features */}
+      {/* Features: Smooth appearing animation effect on each card */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
@@ -174,22 +174,33 @@ export function Home() {
               desc: 'High-resolution searchable PDF bare acts and judicial examination guides available immediately.',
             },
           ].map((feature, i) => (
-            <div
+            <motion.div
               key={i}
-              className="p-8 bg-white rounded-3xl border border-sky-100/70 hover:border-blue-300 transition-all shadow-xs hover:shadow-md group"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ duration: 0.5, delay: i * 0.12, ease: 'easeOut' }}
+              whileHover={{ y: -6 }}
+              className="p-8 bg-white rounded-3xl border border-sky-100/70 hover:border-blue-300 transition-all shadow-xs hover:shadow-xl group"
             >
               <div className="w-14 h-14 bg-sky-50 border border-sky-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
                 <feature.icon className="w-7 h-7 text-blue-700 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-bold text-blue-950 mb-3">{feature.title}</h3>
               <p className="text-slate-600 leading-relaxed text-sm">{feature.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Browse by Legal Category - Just Names & Swipe Left/Right */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Browse by Legal Category: Smooth appearing animation effect */}
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>
             <div className="flex items-center space-x-2 text-sky-600 text-xs font-bold uppercase tracking-wider mb-1">
@@ -269,10 +280,16 @@ export function Home() {
             <div className="absolute right-0 top-0 bottom-4 w-8 bg-gradient-to-l from-slate-50 to-transparent pointer-events-none rounded-r-2xl hidden sm:block"></div>
           )}
         </div>
-      </section>
+      </motion.section>
 
-      {/* Featured Products */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Featured Products: Smooth appearing animation effect */}
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="flex justify-between items-end mb-10">
           <div>
             <div className="flex items-center space-x-2 text-sky-600 text-xs font-bold uppercase tracking-wider mb-1">
@@ -310,10 +327,16 @@ export function Home() {
             ))}
           </div>
         )}
-      </section>
+      </motion.section>
 
-      {/* New Arrivals */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* New Arrivals: Smooth appearing animation effect */}
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="flex justify-between items-end mb-10">
           <div>
             <div className="flex items-center space-x-2 text-sky-600 text-xs font-bold uppercase tracking-wider mb-1">
@@ -349,10 +372,16 @@ export function Home() {
             ))}
           </div>
         )}
-      </section>
+      </motion.section>
 
-      {/* Digital Law PDF Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Digital Law PDF Banner: Smooth appearing animation effect */}
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="bg-gradient-to-r from-blue-950 via-slate-900 to-blue-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl">
           <div className="relative z-10 max-w-xl space-y-4">
             <span className="text-xs font-bold uppercase tracking-widest text-sky-400 bg-sky-500/20 px-3 py-1 rounded-full border border-sky-400/30">
@@ -376,7 +405,7 @@ export function Home() {
           </div>
           <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

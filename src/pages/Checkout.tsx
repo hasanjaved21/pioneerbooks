@@ -151,7 +151,7 @@ export function Checkout() {
             <div className="bg-sky-50/60 p-5 rounded-2xl border border-sky-100 flex flex-col items-center text-center space-y-2">
               <ShieldCheck className="w-6 h-6 text-blue-600" />
               <h4 className="font-bold text-blue-950 text-sm">Authentic Guarantee</h4>
-              <p className="text-xs text-slate-500">Every title verified with authentic Islamic scholarship.</p>
+              <p className="text-xs text-slate-500">Every title verified with authoritative statutory publications and genuine legal editions.</p>
             </div>
             <div className="bg-sky-50/60 p-5 rounded-2xl border border-sky-100 flex flex-col items-center text-center space-y-2">
               <Truck className="w-6 h-6 text-blue-600" />

@@ -1,22 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  BookOpen,
   MapPin,
   Phone,
   Mail,
   Facebook,
-  Clock,
   Award,
-  Sparkles,
   Globe,
   ShieldCheck,
   CheckCircle2,
   ArrowRight,
   BookMarked,
   Scale,
-  FileText,
 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import lawBannerImg from '../assets/images/Pioneer Book House Law Books Banner.png';
 
 export function About() {
   return (
@@ -34,7 +32,12 @@ export function About() {
           ></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+        >
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-blue-500/20 border border-sky-400/30 text-sky-300 rounded-full text-xs font-bold tracking-wider uppercase mb-5 backdrop-blur-xs">
             <Scale className="w-3.5 h-3.5 text-sky-400" />
             <span>Pioneer Books · Pakistan Chowk, Karachi</span>
@@ -50,14 +53,20 @@ export function About() {
           <p className="mt-5 text-base sm:text-lg text-blue-100/80 max-w-2xl mx-auto leading-relaxed">
             Serving the legal fraternity, bench, bar, academia, and civil servants for decades with authoritative statutory codes, bare acts, judicial exam guides, and digital law books.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Main Story & History Section */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="space-y-6"
+            >
               <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3.5 py-1.5 rounded-full">
                 <BookMarked className="w-4 h-4 text-blue-600" />
                 <span>Our Heritage & Mission</span>
@@ -73,30 +82,57 @@ export function About() {
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="p-4 rounded-2xl bg-white border border-sky-100 shadow-2xs">
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: 0.1 }}
+                  whileHover={{ y: -4 }}
+                  className="p-5 rounded-2xl bg-white border border-sky-100 shadow-2xs hover:shadow-md transition-all"
+                >
                   <div className="text-2xl sm:text-3xl font-extrabold text-blue-950">33+</div>
                   <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Legal Categories</div>
-                </div>
-                <div className="p-4 rounded-2xl bg-white border border-sky-100 shadow-2xs">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: 0.2 }}
+                  whileHover={{ y: -4 }}
+                  className="p-5 rounded-2xl bg-white border border-sky-100 shadow-2xs hover:shadow-md transition-all"
+                >
                   <div className="text-2xl sm:text-3xl font-extrabold text-blue-950">100%</div>
                   <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Authoritative Texts</div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Visual Card / Photo */}
-            <div className="relative">
+            {/* Visual Card / Photo: PC view uses Pioneer Book House Law Books Banner.png */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="relative"
+            >
               <div className="relative rounded-3xl overflow-hidden border border-sky-200/80 shadow-2xl shadow-blue-950/10 bg-white">
                 <div className="aspect-4/3 overflow-hidden bg-slate-900">
+                  {/* PC View: Official Pioneer Book House Law Books Banner */}
+                  <img
+                    src={lawBannerImg}
+                    alt="Pioneer Book House Law Books Banner"
+                    className="hidden lg:block w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                  {/* Non-PC / Mobile View */}
                   <img
                     src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200"
                     alt="Pioneer Books Law Library & Bookstore"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    className="block lg:hidden w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-6 sm:p-8 bg-gradient-to-br from-white to-sky-50/50">
                   <div className="flex items-center space-x-4">
-                    <div className="w-14 h-14 rounded-2xl overflow-hidden border border-sky-200 shadow-sm shrink-0 bg-white flex items-center justify-center p-1">
+                    <div className="w-14 h-14 rounded-2xl overflow-hidden border border-sky-200 shadow-xs shrink-0 bg-white flex items-center justify-center p-1">
                       <img
                         src="https://scontent.fkhi2-2.fna.fbcdn.net/v/t39.99422-6/809209856_1101177619532009_3112873547259779385_n.png?stp=dst-jpg_tt6&cstp=mx1254x1254&ctp=s1254x1254&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=HGcsXRsQ8b4Q7kNvwHbDMLl&_nc_oc=Adqa6fQp45379XDNms327v1Uk8NWsbgjczy1Who-aetTU72nfYUuaQ7ZG6NC6vJclzs&_nc_zt=14&_nc_ht=scontent.fkhi2-2.fna&_nc_gid=m15HS9_1r2hJZjQGG2CBpw&_nc_ss=7b2a8&oh=00_AQNOoUbwp1gCyddhXsubHPpjcvJlfk9p8SlIOXnqlVenyg&oe=6AD13960"
                         alt="Pioneer Books Emblem"
@@ -111,7 +147,7 @@ export function About() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -119,7 +155,13 @@ export function About() {
       {/* Pillars of Pioneer Books */}
       <section className="py-16 bg-white border-y border-sky-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-30px' }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-2xl mx-auto mb-14"
+          >
             <span className="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3.5 py-1.5 rounded-full">
               What Defines Us
             </span>
@@ -127,38 +169,45 @@ export function About() {
             <p className="text-slate-600 text-sm mt-2">
               Our principles guarantee up-to-date amendments, authoritative commentary, and dependable nationwide dispatch.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-[#f8fafc] border border-sky-100 hover:border-sky-300 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-blue-950 mb-3">Statutory Accuracy</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Every Bare Act and commentary includes latest statutory amendments, gazette notifications, and landmark Supreme Court citations.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-[#f8fafc] border border-sky-100 hover:border-sky-300 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center mb-6 group-hover:bg-sky-600 group-hover:text-white transition-colors">
-                <Globe className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-blue-950 mb-3">Dual Format Availability</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Receive durable hardbound copies for chambers and bar libraries, or instant digital PDFs for mobile research in courtrooms.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-[#f8fafc] border border-sky-100 hover:border-sky-300 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                <Award className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-blue-950 mb-3">Direct Store Support</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Connect directly with our staff via WhatsApp (+92 333 3073438) or visit our walk-in bookhouse at Pakistan Chowk for inquiries.
-              </p>
-            </div>
+            {[
+              {
+                icon: ShieldCheck,
+                bgIcon: 'bg-blue-100 text-blue-700 group-hover:bg-blue-600 group-hover:text-white',
+                title: 'Statutory Accuracy',
+                desc: 'Every Bare Act and commentary includes latest statutory amendments, gazette notifications, and landmark Supreme Court citations.',
+              },
+              {
+                icon: Globe,
+                bgIcon: 'bg-sky-100 text-sky-700 group-hover:bg-sky-600 group-hover:text-white',
+                title: 'Dual Format Availability',
+                desc: 'Receive durable hardbound copies for chambers and bar libraries, or instant digital PDFs for mobile research in courtrooms.',
+              },
+              {
+                icon: Award,
+                bgIcon: 'bg-indigo-100 text-indigo-700 group-hover:bg-indigo-600 group-hover:text-white',
+                title: 'Direct Store Support',
+                desc: 'Connect directly with our staff via WhatsApp (+92 333 3073438) or visit our walk-in bookhouse at Pakistan Chowk for inquiries.',
+              },
+            ].map((pillar, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.45, delay: i * 0.12, ease: 'easeOut' }}
+                whileHover={{ y: -6 }}
+                className="p-8 rounded-2xl bg-[#f8fafc] border border-sky-100 hover:border-sky-300 hover:shadow-xl transition-all group"
+              >
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-colors ${pillar.bgIcon}`}>
+                  <pillar.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-blue-950 mb-3">{pillar.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{pillar.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -166,7 +215,13 @@ export function About() {
       {/* Store Location & Direct Contact Section */}
       <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-blue-950 to-blue-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="bg-gradient-to-br from-blue-950 to-blue-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden"
+          >
             <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none translate-x-12 translate-y-12">
               <Scale className="w-96 h-96 text-white" />
             </div>
@@ -242,7 +297,13 @@ export function About() {
                 </div>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/15">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+                className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/15"
+              >
                 <h3 className="text-xl font-bold text-white mb-4">Direct Inquiry & Bulk Orders</h3>
                 <p className="text-sky-100 text-sm mb-6">
                   For law firm libraries, bar associations, or student bulk inquiries, reach out directly or browse our full online catalog.
@@ -270,9 +331,9 @@ export function About() {
                     <ArrowRight className="w-4 h-4 text-blue-950" />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

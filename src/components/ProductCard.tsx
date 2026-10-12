@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Download, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Product } from '../types';
 import { formatPrice, cn } from '../lib/utils';
 import { useCart } from '../hooks/useCart';
@@ -20,10 +21,18 @@ export function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <Link
-      to={`/product/${product.id}`}
-      className="group bg-white rounded-2xl overflow-hidden border border-sky-100/90 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-950/10 transition-all duration-300 flex flex-col h-full"
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-25px' }}
+      transition={{ duration: 0.45, ease: 'easeOut' }}
+      whileHover={{ y: -4 }}
+      className="h-full"
     >
+      <Link
+        to={`/product/${product.id}`}
+        className="group bg-white rounded-2xl overflow-hidden border border-sky-100/90 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-950/10 transition-all duration-300 flex flex-col h-full"
+      >
       <div className="relative aspect-[3/4] overflow-hidden bg-sky-50/50">
         <img
           src={product.image_url || 'https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&q=80&w=800'}
@@ -83,5 +92,6 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </div>
     </Link>
+  </motion.div>
   );
 }
