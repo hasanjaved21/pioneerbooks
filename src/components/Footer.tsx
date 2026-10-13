@@ -190,7 +190,7 @@ export function Footer() {
                       if (error) setError('');
                     }}
                     autoFocus
-                    placeholder="Enter password (pioneer45)"
+                    placeholder="Enter password"
                     className="w-full pl-10 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
                   />
                   <button

@@ -107,7 +107,7 @@ export function About() {
               </div>
             </motion.div>
 
-            {/* Visual Card / Photo: PC view uses Pioneer Book House Law Books Banner.png */}
+            {/* Visual Card / Photo: uses Pioneer Book House Law Books Banner.png */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -116,35 +116,12 @@ export function About() {
               className="relative"
             >
               <div className="relative rounded-3xl overflow-hidden border border-sky-200/80 shadow-2xl shadow-blue-950/10 bg-white">
-                <div className="aspect-4/3 overflow-hidden bg-slate-900">
-                  {/* PC View: Official Pioneer Book House Law Books Banner */}
+                <div className="overflow-hidden bg-slate-900">
                   <img
                     src={lawBannerImg}
                     alt="Pioneer Book House Law Books Banner"
-                    className="hidden lg:block w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                   />
-                  {/* Non-PC / Mobile View */}
-                  <img
-                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200"
-                    alt="Pioneer Books Law Library & Bookstore"
-                    className="block lg:hidden w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="p-6 sm:p-8 bg-gradient-to-br from-white to-sky-50/50">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-14 h-14 rounded-2xl overflow-hidden border border-sky-200 shadow-xs shrink-0 bg-white flex items-center justify-center p-1">
-                      <img
-                        src="https://scontent.fkhi2-2.fna.fbcdn.net/v/t39.99422-6/809209856_1101177619532009_3112873547259779385_n.png?stp=dst-jpg_tt6&cstp=mx1254x1254&ctp=s1254x1254&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=HGcsXRsQ8b4Q7kNvwHbDMLl&_nc_oc=Adqa6fQp45379XDNms327v1Uk8NWsbgjczy1Who-aetTU72nfYUuaQ7ZG6NC6vJclzs&_nc_zt=14&_nc_ht=scontent.fkhi2-2.fna&_nc_gid=m15HS9_1r2hJZjQGG2CBpw&_nc_ss=7b2a8&oh=00_AQNOoUbwp1gCyddhXsubHPpjcvJlfk9p8SlIOXnqlVenyg&oe=6AD13960"
-                        alt="Pioneer Books Emblem"
-                        className="w-full h-full object-cover rounded-xl"
-                        referrerPolicy="no-referrer"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="font-extrabold text-blue-950 text-lg">Pioneer Books</h3>
-                      <p className="text-slate-500 text-xs font-medium">Pakistan Chowk · Karachi, Pakistan</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </motion.div>
