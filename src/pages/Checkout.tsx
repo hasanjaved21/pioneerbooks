@@ -66,11 +66,11 @@ export function Checkout() {
           <ul className="space-y-2 text-slate-700">
             <li className="flex items-start space-x-2.5">
               <span className="w-5 h-5 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
-              <span>For digital PDFs, download links are instantly available in your collection.</span>
+              <span>Our team verifies your ordered legal publications and prepares them for courier dispatch.</span>
             </li>
             <li className="flex items-start space-x-2.5">
               <span className="w-5 h-5 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
-              <span>For physical books, our logistics team will dispatch tracking details to your phone.</span>
+              <span>Tracking details and consignment updates will be communicated directly to your phone.</span>
             </li>
           </ul>
         </div>

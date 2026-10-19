@@ -78,7 +78,7 @@ export function About() {
                 Established at the historic literary landmark of <strong>Pakistan Chowk in Karachi</strong>, <strong>Pioneer Books</strong> is one of the most respected law bookhouses and publishers in the country. We curate and publish comprehensive statutory manuals across 33 legal disciplines, from Bare Acts and Constitutional commentaries to Civil & Criminal Codes, Corporate Law, and Judicial Magistrate examinations.
               </p>
               <p className="text-slate-600 leading-relaxed text-base">
-                In an era of digital modernization, we bridge traditional court-bound physical volumes with instant digital PDF access. Advocates, judicial officers, and law scholars can purchase bound legal treatises delivered across Pakistan, or download searchable PDF bare acts directly to their tablets and phones.
+                Advocates, judicial officers, bar associations, and law scholars rely on Pioneer Books for dependable, bound legal treatises delivered securely across Pakistan. Our collection encompasses exhaustive practitioner reference works, latest amended Bare Acts, and statutory guides.
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-4">
@@ -159,8 +159,8 @@ export function About() {
               {
                 icon: Globe,
                 bgIcon: 'bg-sky-100 text-sky-700 group-hover:bg-sky-600 group-hover:text-white',
-                title: 'Dual Format Availability',
-                desc: 'Receive durable hardbound copies for chambers and bar libraries, or instant digital PDFs for mobile research in courtrooms.',
+                title: 'Nationwide Chamber Delivery',
+                desc: 'Receive durable hardbound copies dispatched directly to chamber libraries, bar rooms, and courts across Pakistan.',
               },
               {
                 icon: Award,
@@ -292,7 +292,7 @@ export function About() {
                   </div>
                   <div className="flex items-center space-x-3 text-sm text-sky-100">
                     <CheckCircle2 className="w-5 h-5 text-sky-400 shrink-0" />
-                    <span>Instant access to digital PDF bare acts</span>
+                    <span>Authoritative editions with latest statutory amendments</span>
                   </div>
                   <div className="flex items-center space-x-3 text-sm text-sky-100">
                     <CheckCircle2 className="w-5 h-5 text-sky-400 shrink-0" />

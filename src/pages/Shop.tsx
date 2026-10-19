@@ -115,17 +115,7 @@ export function Shop() {
               </button>
             </span>
           )}
-          {currentType !== 'All' && (
-            <span className="inline-flex items-center space-x-1.5 bg-blue-600 text-white px-3 py-1 rounded-lg font-semibold">
-              <span>Format: {currentType === 'pdf' ? 'Digital PDF' : 'Physical'}</span>
-              <button
-                onClick={() => updateFilter('type', 'All')}
-                className="hover:text-blue-200 cursor-pointer"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
-            </span>
-          )}
+
           {searchQuery && (
             <span className="inline-flex items-center space-x-1.5 bg-blue-600 text-white px-3 py-1 rounded-lg font-semibold">
               <span>Keyword: &quot;{searchQuery}&quot;</span>
@@ -247,36 +237,6 @@ export function Shop() {
                   No matching category
                 </p>
               )}
-            </div>
-          </div>
-
-          {/* Format Box */}
-          <div className="bg-slate-50/70 p-4 sm:p-5 rounded-2xl border border-sky-100/80">
-            <h3 className="text-xs font-bold text-blue-950 uppercase tracking-wider mb-3">
-              Format
-            </h3>
-            <div className="space-y-1">
-              {types.map((type) => (
-                <button
-                  key={type}
-                  onClick={() => {
-                    updateFilter('type', type);
-                    setShowFilters(false);
-                  }}
-                  className={cn(
-                    'block w-full text-left px-3 py-2 rounded-xl text-xs transition-all capitalize cursor-pointer',
-                    currentType.toLowerCase() === type.toLowerCase()
-                      ? 'bg-blue-600 text-white font-bold shadow-xs'
-                      : 'text-slate-700 hover:bg-sky-100/60'
-                  )}
-                >
-                  {type === 'All'
-                    ? 'All Formats'
-                    : type === 'pdf'
-                    ? 'Digital PDF Downloads'
-                    : 'Physical Hardbound / Paper'}
-                </button>
-              ))}
             </div>
           </div>
         </aside>

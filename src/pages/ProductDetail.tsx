@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ShoppingCart, Download, ArrowLeft, Star, Share2, BookOpen, CheckCircle2, Info } from 'lucide-react';
+import { ShoppingCart, ArrowLeft, Star, Share2, BookOpen, CheckCircle2, Info } from 'lucide-react';
 import { productService } from '../lib/services';
 import { Product } from '../types';
 import { useCart } from '../hooks/useCart';
@@ -101,12 +101,6 @@ export function ProductDetail() {
               <span className="px-3 py-1 bg-sky-100 text-sky-800 rounded-full text-xs font-bold uppercase tracking-wider">
                 {product.category}
               </span>
-              <span className={cn(
-                "px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider",
-                product.type === 'pdf' ? "bg-indigo-100 text-indigo-800" : "bg-blue-100 text-blue-800"
-              )}>
-                {product.type === 'pdf' ? 'Instant Digital PDF' : 'Physical Hardcopy'}
-              </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-blue-950 leading-tight">
               {product.title}
@@ -134,11 +128,11 @@ export function ProductDetail() {
             </div>
             <div className="flex items-center space-x-2.5 text-slate-700">
               <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
-              <span>High Quality Print / Paper</span>
+              <span>High Quality Print &amp; Binding</span>
             </div>
             <div className="flex items-center space-x-2.5 text-slate-700">
               <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
-              <span>Instant Download Link</span>
+              <span>Nationwide Fast Dispatch</span>
             </div>
             <div className="flex items-center space-x-2.5 text-slate-700">
               <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
@@ -151,8 +145,8 @@ export function ProductDetail() {
               onClick={handleAction}
               className="w-full sm:w-auto bg-gradient-to-r from-blue-700 to-sky-600 hover:from-blue-800 hover:to-sky-700 text-white px-10 py-4 rounded-2xl font-bold text-base transition-all shadow-lg shadow-blue-200 flex items-center justify-center space-x-3 cursor-pointer"
             >
-              {product.type === 'pdf' ? <Download className="w-5 h-5" /> : <ShoppingCart className="w-5 h-5" />}
-              <span>{product.type === 'pdf' ? 'Add Digital PDF to Cart' : 'Add Physical Book to Cart'}</span>
+              <ShoppingCart className="w-5 h-5" />
+              <span>Add Book to Cart</span>
             </button>
           </div>
         </div>

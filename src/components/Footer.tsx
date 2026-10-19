@@ -43,10 +43,9 @@ export function Footer() {
             <Link to="/" className="flex items-center space-x-3">
               <div className="w-11 h-11 rounded-xl overflow-hidden border border-slate-800 shadow-md bg-white shrink-0 flex items-center justify-center">
                 <img
-                  src="https://scontent.fkhi2-2.fna.fbcdn.net/v/t39.99422-6/809209856_1101177619532009_3112873547259779385_n.png?stp=dst-jpg_tt6&cstp=mx1254x1254&ctp=s1254x1254&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=HGcsXRsQ8b4Q7kNvwHbDMLl&_nc_oc=Adqa6fQp45379XDNms327v1Uk8NWsbgjczy1Who-aetTU72nfYUuaQ7ZG6NC6vJclzs&_nc_zt=14&_nc_ht=scontent.fkhi2-2.fna&_nc_gid=m15HS9_1r2hJZjQGG2CBpw&_nc_ss=7b2a8&oh=00_AQNOoUbwp1gCyddhXsubHPpjcvJlfk9p8SlIOXnqlVenyg&oe=6AD13960"
+                  src="/logo.png"
                   alt="Pioneer Books Logo"
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
                 />
               </div>
               <span className="text-xl font-extrabold text-white tracking-tight">
@@ -54,7 +53,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-slate-300/80 leading-relaxed text-sm">
-              Pakistan&apos;s trusted legal bookhouse at Pakistan Chowk, Karachi. Providing authoritative Bare Acts, Civil & Criminal Codes, judicial guides, and digital legal PDFs.
+              Pakistan&apos;s trusted legal bookhouse at Pakistan Chowk, Karachi. Providing authoritative Bare Acts, Civil &amp; Criminal Codes, and judicial examination guides.
             </p>
             <div className="flex space-x-3">
               <a
@@ -89,10 +88,8 @@ export function Footer() {
             <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-sky-400">Quick Links</h3>
             <ul className="space-y-3 text-sm">
               <li><Link to="/" className="text-slate-300 hover:text-white transition-colors">Home</Link></li>
+              <li><Link to="/shop" className="text-slate-300 hover:text-white transition-colors">Catalog</Link></li>
               <li><Link to="/about" className="text-slate-300 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/shop" className="text-slate-300 hover:text-white transition-colors">Shop All Books</Link></li>
-              <li><Link to="/shop?type=pdf" className="text-slate-300 hover:text-white transition-colors">Digital PDFs</Link></li>
-              <li><Link to="/shop?type=physical" className="text-slate-300 hover:text-white transition-colors">Physical Books</Link></li>
             </ul>
           </div>
 

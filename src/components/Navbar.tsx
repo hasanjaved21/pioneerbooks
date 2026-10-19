@@ -21,10 +21,9 @@ export function Navbar() {
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="w-11 h-11 rounded-xl overflow-hidden border border-sky-200/80 shadow-xs bg-white shrink-0 group-hover:scale-105 transition-transform flex items-center justify-center">
               <img
-                src="https://scontent.fkhi2-2.fna.fbcdn.net/v/t39.99422-6/809209856_1101177619532009_3112873547259779385_n.png?stp=dst-jpg_tt6&cstp=mx1254x1254&ctp=s1254x1254&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=HGcsXRsQ8b4Q7kNvwHbDMLl&_nc_oc=Adqa6fQp45379XDNms327v1Uk8NWsbgjczy1Who-aetTU72nfYUuaQ7ZG6NC6vJclzs&_nc_zt=14&_nc_ht=scontent.fkhi2-2.fna&_nc_gid=m15HS9_1r2hJZjQGG2CBpw&_nc_ss=7b2a8&oh=00_AQNOoUbwp1gCyddhXsubHPpjcvJlfk9p8SlIOXnqlVenyg&oe=6AD13960"
+                src="/logo.png"
                 alt="Pioneer Books Logo"
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
             </div>
             <div className="flex flex-col">
@@ -40,7 +39,7 @@ export function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-slate-700 hover:text-blue-600 font-semibold transition-colors">Home</Link>
-            <Link to="/shop" className="text-slate-700 hover:text-blue-600 font-semibold transition-colors">Shop</Link>
+            <Link to="/shop" className="text-slate-700 hover:text-blue-600 font-semibold transition-colors">Catalog</Link>
             <Link to="/about" className="text-slate-700 hover:text-blue-600 font-semibold transition-colors">About Us</Link>
           </div>
 
@@ -128,8 +127,7 @@ export function Navbar() {
             >
               {[
                 { to: '/', label: 'Home' },
-                { to: '/shop', label: 'Shop All Books' },
-                { to: '/shop?type=pdf', label: 'Digital Legal PDFs' },
+                { to: '/shop', label: 'Catalog' },
                 { to: '/about', label: 'About Us' },
               ].map((item) => (
                 <motion.div

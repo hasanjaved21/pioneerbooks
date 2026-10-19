@@ -44,7 +44,7 @@ export function Cart() {
                   <div>
                     <h3 className="text-base font-bold text-blue-950 line-clamp-1">{item.title}</h3>
                     <span className="text-[11px] font-bold uppercase tracking-wider text-sky-700">
-                      {item.type === 'pdf' ? 'Digital PDF' : 'Physical Book'}
+                      Law Publication
                     </span>
                   </div>
                   <button
