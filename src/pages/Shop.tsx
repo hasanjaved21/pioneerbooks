@@ -254,16 +254,16 @@ export function Shop() {
           </div>
 
           {loading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
               {[...Array(6)].map((_, i) => (
                 <div
                   key={i}
-                  className="aspect-[3/4] bg-sky-50/70 rounded-2xl animate-pulse"
+                  className="aspect-[4/5] bg-sky-50/70 rounded-xl animate-pulse"
                 ></div>
               ))}
             </div>
           ) : products.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
               {products.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}

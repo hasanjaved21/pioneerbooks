@@ -22,6 +22,8 @@ export interface Order {
   status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
   customer_name: string;
   customer_phone: string;
+  customer_cnic?: string;
+  customer_email?: string;
   customer_address: string;
   created_at: string;
 }

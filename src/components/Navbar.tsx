@@ -28,9 +28,9 @@ export function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-extrabold text-blue-950 tracking-tight leading-none">
-                Pioneer <span className="text-blue-600">Books</span>
+                Pioneer Books
               </span>
-              <span className="text-[10px] uppercase font-bold tracking-widest text-sky-600 mt-0.5">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-orange-500 mt-0.5">
                 Best bookstore of Karachi
               </span>
             </div>
@@ -38,9 +38,10 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-slate-700 hover:text-blue-600 font-semibold transition-colors">Home</Link>
-            <Link to="/shop" className="text-slate-700 hover:text-blue-600 font-semibold transition-colors">Catalog</Link>
-            <Link to="/about" className="text-slate-700 hover:text-blue-600 font-semibold transition-colors">About Us</Link>
+            <Link to="/" className="text-slate-700 hover:text-orange-600 font-semibold transition-colors">Home</Link>
+            <Link to="/shop" className="text-slate-700 hover:text-orange-600 font-semibold transition-colors">Catalog</Link>
+            <Link to="/categories" className="text-slate-700 hover:text-orange-600 font-semibold transition-colors">Categories</Link>
+            <Link to="/about" className="text-slate-700 hover:text-orange-600 font-semibold transition-colors">About Us</Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-5">
@@ -128,6 +129,7 @@ export function Navbar() {
               {[
                 { to: '/', label: 'Home' },
                 { to: '/shop', label: 'Catalog' },
+                { to: '/categories', label: 'Categories' },
                 { to: '/about', label: 'About Us' },
               ].map((item) => (
                 <motion.div

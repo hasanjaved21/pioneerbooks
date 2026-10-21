@@ -15,28 +15,27 @@ export function Checkout() {
   const [loading, setLoading] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
+    name: user?.user_metadata?.name || '',
     phone: '',
+    cnic: '',
+    email: user?.email || '',
     address: '',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!user) {
-      toast.error('Please login to place an order');
-      navigate('/login');
-      return;
-    }
 
     setLoading(true);
     try {
       await orderService.create({
-        user_id: user.id,
+        user_id: user?.id || 'guest-' + Date.now(),
         items: cart,
         total_price: total,
         status: 'pending',
         customer_name: formData.name,
         customer_phone: formData.phone,
+        customer_cnic: formData.cnic,
+        customer_email: formData.email,
         customer_address: formData.address,
       });
 
@@ -105,15 +104,39 @@ export function Checkout() {
                   placeholder="Enter recipient's full name"
                 />
               </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Phone / WhatsApp Number</label>
+                  <input
+                    required
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full px-4 py-3 bg-sky-50/50 border border-sky-100 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-sm"
+                    placeholder="0300-1234567"
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">CNIC No. <span className="text-slate-400 font-normal">(Optional)</span></label>
+                  <input
+                    type="text"
+                    value={formData.cnic}
+                    onChange={(e) => setFormData({ ...formData, cnic: e.target.value })}
+                    className="w-full px-4 py-3 bg-sky-50/50 border border-sky-100 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-sm"
+                    placeholder="42101-1234567-1"
+                    maxLength={15}
+                  />
+                </div>
+              </div>
               <div className="space-y-1.5">
-                <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Phone / WhatsApp Number</label>
+                <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Email Address</label>
                 <input
                   required
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-3 bg-sky-50/50 border border-sky-100 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-sm"
-                  placeholder="0300-1234567"
+                  placeholder="advocate@example.com"
                 />
               </div>
               <div className="space-y-1.5">
@@ -124,7 +147,7 @@ export function Checkout() {
                   value={formData.address}
                   onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                   className="w-full px-4 py-3 bg-sky-50/50 border border-sky-100 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-sm resize-none"
-                  placeholder="House/Street, Area, City, Province"
+                  placeholder="Chamber / Office / House #, Street, City, Province"
                 />
               </div>
 

@@ -7,12 +7,14 @@ import { useCart } from '../hooks/useCart';
 import { formatPrice, cn } from '../lib/utils';
 import { toast } from 'sonner';
 import { ProductCard } from '../components/ProductCard';
+import { QuickBuyModal } from '../components/QuickBuyModal';
 
 export function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isBuyModalOpen, setIsBuyModalOpen] = useState(false);
   const { addToCart } = useCart();
   const navigate = useNavigate();
 
@@ -140,13 +142,19 @@ export function ProductDetail() {
             </div>
           </div>
 
-          <div className="pt-2">
+          <div className="pt-2 flex flex-wrap gap-3">
+            <button
+              onClick={() => setIsBuyModalOpen(true)}
+              className="w-full sm:w-auto bg-red-600 hover:bg-red-700 active:bg-red-800 text-white px-8 py-4 rounded-2xl font-extrabold text-base transition-all shadow-lg shadow-red-500/25 flex items-center justify-center space-x-2 cursor-pointer active:scale-95"
+            >
+              <span>Buy Now</span>
+            </button>
             <button
               onClick={handleAction}
-              className="w-full sm:w-auto bg-gradient-to-r from-blue-700 to-sky-600 hover:from-blue-800 hover:to-sky-700 text-white px-10 py-4 rounded-2xl font-bold text-base transition-all shadow-lg shadow-blue-200 flex items-center justify-center space-x-3 cursor-pointer"
+              className="w-full sm:w-auto bg-sky-50 hover:bg-blue-50 text-blue-800 border border-sky-200 px-6 py-4 rounded-2xl font-bold text-base transition-all flex items-center justify-center space-x-2.5 cursor-pointer"
             >
-              <ShoppingCart className="w-5 h-5" />
-              <span>Add Book to Cart</span>
+              <ShoppingCart className="w-5 h-5 text-blue-700" />
+              <span>Add to Cart</span>
             </button>
           </div>
         </div>
@@ -166,6 +174,13 @@ export function ProductDetail() {
           </div>
         </div>
       )}
+
+      {/* Direct Order Quick Buy Modal */}
+      <QuickBuyModal
+        product={product}
+        isOpen={isBuyModalOpen}
+        onClose={() => setIsBuyModalOpen(false)}
+      />
     </div>
   );
 }

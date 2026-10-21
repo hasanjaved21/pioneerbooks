@@ -49,7 +49,7 @@ export function Footer() {
                 />
               </div>
               <span className="text-xl font-extrabold text-white tracking-tight">
-                Pioneer <span className="text-sky-400">Books</span>
+                Pioneer Books
               </span>
             </Link>
             <p className="text-slate-300/80 leading-relaxed text-sm">
@@ -61,7 +61,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Pioneer Books on Facebook"
-                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-colors text-slate-300 hover:text-white"
+                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-orange-500 hover:border-orange-500 transition-colors text-slate-300 hover:text-white"
               >
                 <Facebook className="w-4 h-4" />
               </a>
@@ -76,7 +76,7 @@ export function Footer() {
               </a>
               <a
                 href="mailto:pioneerbookhouse786@gmail.com"
-                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-colors text-slate-300 hover:text-white"
+                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-orange-500 hover:border-orange-500 transition-colors text-slate-300 hover:text-white"
               >
                 <Mail className="w-4 h-4" />
               </a>
@@ -85,44 +85,56 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-sky-400">Quick Links</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-orange-400">Quick Links</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/" className="text-slate-300 hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/shop" className="text-slate-300 hover:text-white transition-colors">Catalog</Link></li>
-              <li><Link to="/about" className="text-slate-300 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-slate-300 hover:text-white transition-colors">Home</Link></li>
+              <li><Link to="/shop" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-slate-300 hover:text-white transition-colors">Catalog</Link></li>
+              <li><Link to="/categories" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-slate-300 hover:text-white transition-colors">Categories</Link></li>
+              <li><Link to="/about" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-slate-300 hover:text-white transition-colors">About Us</Link></li>
             </ul>
           </div>
 
           {/* Legal Categories */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-sky-400">Key Categories</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-orange-400">Key Categories</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/shop?category=Bare Acts" className="text-slate-300 hover:text-white transition-colors">Bare Acts</Link></li>
-              <li><Link to="/shop?category=Code of Civil" className="text-slate-300 hover:text-white transition-colors">Code of Civil (CPC)</Link></li>
-              <li><Link to="/shop?category=Code of Criminal" className="text-slate-300 hover:text-white transition-colors">Code of Criminal (CrPC)</Link></li>
-              <li><Link to="/shop?category=Constitutional Laws" className="text-slate-300 hover:text-white transition-colors">Constitutional Laws</Link></li>
-              <li><Link to="/shop?category=Civil Judge Exam" className="text-slate-300 hover:text-white transition-colors">Civil Judge Exam</Link></li>
-              <li><Link to="/shop?category=Corporate Laws" className="text-slate-300 hover:text-white transition-colors">Corporate Laws</Link></li>
-              <li><Link to="/shop" className="text-sky-400 hover:text-sky-300 font-semibold transition-colors">View All 33 Categories →</Link></li>
+              <li><Link to="/shop?category=Bare Acts" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-slate-300 hover:text-white transition-colors">Bare Acts</Link></li>
+              <li><Link to="/shop?category=Code of Civil" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-slate-300 hover:text-white transition-colors">Code of Civil (CPC)</Link></li>
+              <li><Link to="/shop?category=Code of Criminal" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-slate-300 hover:text-white transition-colors">Code of Criminal (CrPC)</Link></li>
+              <li><Link to="/shop?category=Constitutional Laws" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-slate-300 hover:text-white transition-colors">Constitutional Laws</Link></li>
+              <li><Link to="/shop?category=Civil Judge Exam" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-slate-300 hover:text-white transition-colors">Civil Judge Exam</Link></li>
+              <li><Link to="/shop?category=Corporate Laws" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-slate-300 hover:text-white transition-colors">Corporate Laws</Link></li>
+              <li><Link to="/categories" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-orange-400 hover:text-orange-300 font-semibold transition-colors">View All 33 Categories →</Link></li>
             </ul>
           </div>
 
           {/* Contact Details */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-sky-400">Contact Us</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-orange-400">Contact Us</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-3">
-                <MapPin className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                <span className="text-slate-300/80">Shop no.1-A Ismail Mansion Pakistan Chowk Karachi ,</span>
+                <MapPin className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
+                <span className="text-slate-300/80">Shop no. 1-A Ismail Mansion, Pakistan Chowk, Garikhata, Karachi</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-sky-400 shrink-0" />
+                <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 bg-orange-500/20 text-orange-400 rounded border border-orange-500/30 shrink-0">PLUS CODE</span>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=V236%2BPX%20Garikhata%2C%20Karachi%2C%20Pakistan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-300 hover:text-orange-400 font-mono text-xs transition-colors"
+                >
+                  V236+PX Garikhata, Karachi
+                </a>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Phone className="w-4 h-4 text-orange-400 shrink-0" />
                 <a href="tel:+923333073438" className="text-slate-300/90 hover:text-white transition-colors">
                   +92 333 3073438
                 </a>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-sky-400 shrink-0" />
+                <Mail className="w-4 h-4 text-orange-400 shrink-0" />
                 <a href="mailto:pioneerbookhouse786@gmail.com" className="text-slate-300/80 hover:text-white transition-colors">
                   pioneerbookhouse786@gmail.com
                 </a>

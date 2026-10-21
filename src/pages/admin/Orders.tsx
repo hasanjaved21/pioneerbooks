@@ -210,6 +210,18 @@ export function AdminOrders() {
                     <Phone className="w-3.5 h-3.5 text-sky-600" />
                     <span>{selectedOrder.customer_phone}</span>
                   </div>
+                  {selectedOrder.customer_cnic && (
+                    <div className="flex items-center space-x-2 text-slate-600 text-xs">
+                      <span className="font-semibold text-sky-600">CNIC:</span>
+                      <span>{selectedOrder.customer_cnic}</span>
+                    </div>
+                  )}
+                  {selectedOrder.customer_email && (
+                    <div className="flex items-center space-x-2 text-slate-600 text-xs">
+                      <span className="font-semibold text-sky-600">@</span>
+                      <span>{selectedOrder.customer_email}</span>
+                    </div>
+                  )}
                   <div className="flex items-start space-x-2 text-slate-600 text-xs">
                     <MapPin className="w-3.5 h-3.5 text-sky-600 shrink-0 mt-0.5" />
                     <span>{selectedOrder.customer_address}</span>

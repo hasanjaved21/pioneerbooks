@@ -2,10 +2,12 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { StoreLocationSection } from './components/StoreLocationSection';
 import { Home } from './pages/Home';
 import { Shop } from './pages/Shop';
 import { ProductDetail } from './pages/ProductDetail';
 import { About } from './pages/About';
+import { Categories } from './pages/Categories';
 import { Cart } from './pages/Cart';
 import { Checkout } from './pages/Checkout';
 import { Login } from './pages/Login';
@@ -18,6 +20,7 @@ import { useAuth } from './hooks/useAuth';
 import { Toaster } from 'sonner';
 import { isSupabaseConfigured } from './lib/supabase';
 import { AlertCircle } from 'lucide-react';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function PrivateRoute({ children, adminOnly = false }: { children: React.ReactNode, adminOnly?: boolean }) {
   const { user, isAdmin, loading } = useAuth();
@@ -83,15 +86,17 @@ export default function App() {
           </div>
         </div>
       )}
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/categories" element={<Categories />} />
           <Route path="/about" element={<About />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 
@@ -103,6 +108,7 @@ export default function App() {
           <Route path="/admin/orders" element={<PrivateRoute adminOnly><AdminOrders /></PrivateRoute>} />
         </Routes>
       </main>
+      <StoreLocationSection />
       <Footer />
       <Toaster position="top-center" richColors />
 
